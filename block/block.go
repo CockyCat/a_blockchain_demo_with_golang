@@ -47,8 +47,8 @@ func NewBlock(transactions string, height int64, preBlockHash []byte) *Block {
 //创世区块
 func GenesisBlock(data string) *Block {
 	return NewBlock(
-		data, 
-		1, 
-		[]byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+		data,
+		1,
+		[]byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	)
 }

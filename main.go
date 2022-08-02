@@ -7,6 +7,30 @@ import (
 )
 
 func main() {
-	gensisBlock := block.GenesisBlock("Geneis Block")
-	fmt.Println(gensisBlock)
+	gensisBlockChain := block.GenesisBlockChain()
+	fmt.Println(gensisBlockChain)
+
+	gensisBlockChain.AddBlock2Chain(
+		"A transaction happened",
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Height+1, //last height add 1
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Hash,
+	)
+
+	gensisBlockChain.AddBlock2Chain(
+		"A transaction happened",
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Height+1,
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Hash,
+	)
+
+	gensisBlockChain.AddBlock2Chain(
+		"A transaction happened",
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Height+1,
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Hash,
+	)
+
+	gensisBlockChain.AddBlock2Chain(
+		"A transaction happened",
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Height+1,
+		gensisBlockChain.Blocks[len(gensisBlockChain.Blocks)-1].Hash,
+	)
 }
