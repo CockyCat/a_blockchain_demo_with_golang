@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"gary.com/myweb/pubchain/block"
+	"gary.com/myweb/a_blockchain_demo_with_golang/block"
 )
 
 func main() {
-	block := block.NewBlock("Geneis Block", 10, []byte{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0})
-	fmt.Println(block)
+	gensisBlock := block.GenesisBlock("Geneis Block")
+	fmt.Println(gensisBlock)
 }
