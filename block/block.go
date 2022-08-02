@@ -14,6 +14,7 @@ type Block struct {
 	Transactions []byte
 	Timestamp    int64
 	Hash         []byte
+	Nonce        int64
 }
 
 func (b *Block) CreateHash() {
@@ -39,8 +40,15 @@ func NewBlock(transactions string, height int64, preBlockHash []byte) *Block {
 		Transactions: []byte(transactions), //字符串强转byte数组
 		Timestamp:    time.Now().Unix(),
 		Hash:         nil,
+		Nonce:        0,
 	}
-	block.CreateHash()
+	//block.CreateHash()
+	//POW
+	pow := NewPOW(block)
+	hash, nonce := pow.Run()
+
+	block.Hash = hash[:]
+	block.Nonce = nonce
 	return block
 }
 
